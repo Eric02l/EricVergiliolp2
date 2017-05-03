@@ -12,7 +12,7 @@ namespace ConsoleApplication1
         {
             int nv;
             double km, cv;
-            string n, cla, sla;
+            string n, cla, sla;;
             Console.WriteLine("qual a quantidade de veículos do galpão?");
             nv = Convert.ToInt32(Console.ReadLine());
 
@@ -27,43 +27,36 @@ namespace ConsoleApplication1
 
                 Console.WriteLine("quantos quilometros rodados?");
                 km = Convert.ToDouble(Console.ReadLine());
+
             }
-                
-                
-                
-                if(km< 5000)
-            {
-                cla= "novo" ;
-            }
+        }
+        public static string classificar (string n, double km, double cv, string cla, string sla)
+        {
             
-               
-            else if(km>5000 && km <30000)
-            {
-                cla="semi-novo";
-            }
+
+            if (km < 5000)
+                cla = "novo";
+
+            else if (km < 30000)
+                cla = "semi-novo";
 
             else
-            {
+                cla = "velho";
 
-               cla="velho";
-            }
-            if(cv > 200 )
-            {
-                sla="potente";
-            }
-     
-            else if (cv>=120 && cv< 200)
-            {
+            if (cv > 200)
+                sla = "potente";
+
+            else if (cv < 200)
                 sla = "forte";
-            }
+
             else
-            {
-                sla="popular";
-            }
 
-                Console.WriteLine("{0} - {1} {2}", n, cla, sla);
+                sla = "popular";
 
-            }
+
+            return string.Format("{0} - {1} {2}", n, cla, sla);
+
+        }
 
 
 
