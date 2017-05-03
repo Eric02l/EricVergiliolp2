@@ -35,7 +35,7 @@ namespace ConsoleApplication1
             
 
             if (km < 5000)
-                cla = "novo";
+                cla = "novo";   
 
             else if (km < 30000)
                 cla = "semi-novo";
