@@ -8,59 +8,34 @@ namespace ConsoleApplication1
 {
     class Program
     {
+        public struct Carro
+        {
+            public string Modelo;
+            public double Quilometragem;
+            public int Potencia;
+        }
+
         static void Main(string[] args)
         {
-            int nv;
-            double km, cv;
-            string n, cla, sla;;
-            Console.WriteLine("qual a quantidade de veículos do galpão?");
-            nv = Convert.ToInt32(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
+            Carro[] carros = new Carro[n];
 
-            for (int i = 0; i < nv; i++)
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("qual o nome do carro?");
-                n = Console.ReadLine();
-
-                Console.WriteLine("qual é a potência do veiculo?");
-                cv = Convert.ToDouble(Console.ReadLine());
-
-
-                Console.WriteLine("quantos quilometros rodados?");
-                km = Convert.ToDouble(Console.ReadLine());
-
+                carros[i].Modelo = Console.ReadLine();
+                carros[i].Quilometragem = double.Parse(Console.ReadLine());
+                carros[i].Potencia = int.Parse(Console.ReadLine());
             }
+
+            for (int i = 0; i < n; i++)
+                Console.WriteLine(carros[i].Classificar());
         }
-        public static string classificar (string n, double km, double cv, string cla, string sla)
-        {
+
+
+
             
 
-            if (km < 5000)
-                cla = "novo";   
-
-            else if (km < 30000)
-                cla = "semi-novo";
-
-            else
-                cla = "velho";
-
-            if (cv > 200)
-                sla = "potente";
-
-            else if (cv < 200)
-                sla = "forte";
-
-            else
-
-                sla = "popular";
-
-
-            return string.Format("{0} - {1} {2}", n, cla, sla);
-
         }
 
-
-
-           
-        
     }
 }
