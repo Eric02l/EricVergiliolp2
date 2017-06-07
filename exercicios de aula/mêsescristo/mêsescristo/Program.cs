@@ -10,13 +10,13 @@ namespace mêsescristo
     {
         static void Main(string[] args)
         {
-            int me, di, ano;
-            string data, dt;
+            double me;
+            string data, dt,me, di, ano;
           
             Console.WriteLine("Qual é a data?");
             data = Console.ReadLine();
 
-            me = data.Substring(3,2);
+            me = data.substring (3,2);
 
             di = data.Substring(0,2);
 
